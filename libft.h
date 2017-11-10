@@ -6,7 +6,7 @@
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:35:04 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/09 12:50:20 by llopez           ###   ########.fr       */
+/*   Updated: 2017/11/10 15:25:32 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,11 @@ int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 void	ft_bzero(void *s, size_t n);
 int		ft_atoi(char const *str);
+int		ft_strncmp(char const *s1, char const *s2, size_t n);
+int		ft_strcmp(char const *s1, char const *s2);
+char	*ft_strnstr(char const *str, char const *search, size_t n);
+char	*ft_strstr(char const *str, char const *search);
+char	*ft_strrchr(char const *s, int c);
+char	*ft_strchr(char const *s, int c);
 
 #endif
