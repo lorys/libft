@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 10:45:59 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/11 12:17:23 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/11 17:24:20 by llopez            #+#    #+#             */
+/*   Updated: 2017/11/11 18:41:24 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char const *str, char const *search)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	int i;
-	int b;
+	size_t i;
 
-	b = 0;
-	i = 0;
-	if (!*search)
-		return ((char *)str);
-	while (str[i] != '\0')
+	i = ft_strlen(src);
+	if (i < len)
 	{
-		if (str[i] == search[b])
-		{
-			while (search[b] == str[i + b])
-			{
-				if (search[b + 1] == '\0')
-					return ((char *)str + i);
-				b++;
-			}
-			b = 0;
-		}
-		i++;
+		ft_strcpy(dst, src);
+		ft_bzero(dst + i, len - i);
 	}
-	return (0);
+	else
+		ft_memcpy(dst, src, len);
+	return (dst);
 }

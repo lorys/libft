@@ -13,7 +13,8 @@
 
 int main(void)
 {
-	unsigned char test[10] = "dsfsdfsdf";
-		printf("%d de place. \n", ft_memlen(test));
-		return (0);
+	char s1[14] = "000000000";
+	char s2[] = "111";
+	printf("resultat: %s \n taille : %d", ft_strcat(s1, s2), (int)ft_strlen(s1));
+	return (0);
 }

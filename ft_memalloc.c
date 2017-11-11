@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 10:45:59 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/11 12:17:23 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/11 18:49:58 by llopez            #+#    #+#             */
+/*   Updated: 2017/11/11 18:59:12 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char const *str, char const *search)
+void	*ft_memalloc(size_t len)
 {
-	int i;
-	int b;
+	unsigned char *alloc;
 
-	b = 0;
-	i = 0;
-	if (!*search)
-		return ((char *)str);
-	while (str[i] != '\0')
-	{
-		if (str[i] == search[b])
-		{
-			while (search[b] == str[i + b])
-			{
-				if (search[b + 1] == '\0')
-					return ((char *)str + i);
-				b++;
-			}
-			b = 0;
-		}
-		i++;
-	}
-	return (0);
+	if (!(alloc = (unsigned char *)malloc(len)))
+		return (0);
+	ft_bzero(alloc, len);
+	return (alloc);
 }

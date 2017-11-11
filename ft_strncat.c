@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 10:45:59 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/11 12:17:23 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/11 09:20:10 by llopez            #+#    #+#             */
+/*   Updated: 2017/11/11 17:04:03 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char const *str, char const *search)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	int i;
-	int b;
+	int s1_len;
+	int s2_len;
 
-	b = 0;
 	i = 0;
-	if (!*search)
-		return ((char *)str);
-	while (str[i] != '\0')
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	while (i < s2_len && i < (int)n)
 	{
-		if (str[i] == search[b])
-		{
-			while (search[b] == str[i + b])
-			{
-				if (search[b + 1] == '\0')
-					return ((char *)str + i);
-				b++;
-			}
-			b = 0;
-		}
+		s1[s1_len + i] = s2[i];
 		i++;
 	}
-	return (0);
+	s1[s1_len + i] = '\0';
+	return (s1);
 }

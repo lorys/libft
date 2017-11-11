@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 10:45:59 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/11 12:17:23 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/11 07:51:44 by llopez            #+#    #+#             */
+/*   Updated: 2017/11/11 17:04:31 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char const *str, char const *search)
+size_t	ft_strlcat(char *dst, char const *src, size_t size)
 {
 	int i;
 	int b;
 
 	b = 0;
 	i = 0;
-	if (!*search)
-		return ((char *)str);
-	while (str[i] != '\0')
+	while (dst[i] && size)
 	{
-		if (str[i] == search[b])
-		{
-			while (search[b] == str[i + b])
-			{
-				if (search[b + 1] == '\0')
-					return ((char *)str + i);
-				b++;
-			}
-			b = 0;
-		}
 		i++;
+		size--;
 	}
-	return (0);
+	if (!size)
+		return (i + ft_strlen(src));
+	while (src[b] && --size)
+	{
+		dst[i + b] = src[b];
+		b++;
+	}
+	dst[i + b] = '\0';
+	return (i + ft_strlen(src));
 }

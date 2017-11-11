@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 10:45:59 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/11 12:17:23 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/11 14:56:35 by llopez            #+#    #+#             */
+/*   Updated: 2017/11/11 16:48:16 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char const *str, char const *search)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i;
-	int b;
+	int				i;
+	unsigned char	c_uc;
+	unsigned char	*tmp;
 
-	b = 0;
+	c_uc = (unsigned char)c;
 	i = 0;
-	if (!*search)
-		return ((char *)str);
-	while (str[i] != '\0')
+	tmp = (unsigned char *)s;
+	while (n--)
 	{
-		if (str[i] == search[b])
-		{
-			while (search[b] == str[i + b])
-			{
-				if (search[b + 1] == '\0')
-					return ((char *)str + i);
-				b++;
-			}
-			b = 0;
-		}
+		if (tmp[i] == c_uc)
+			return (tmp + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 10:45:59 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/11 12:17:23 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/11 16:48:24 by llopez            #+#    #+#             */
+/*   Updated: 2017/11/11 18:47:16 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char const *str, char const *search)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-	int b;
+	int				i;
+	unsigned char	*s1u;
+	unsigned char	*s2u;
 
-	b = 0;
+	s1u = (unsigned char *)s1;
+	s2u = (unsigned char *)s2;
 	i = 0;
-	if (!*search)
-		return ((char *)str);
-	while (str[i] != '\0')
+	while (n--)
 	{
-		if (str[i] == search[b])
-		{
-			while (search[b] == str[i + b])
-			{
-				if (search[b + 1] == '\0')
-					return ((char *)str + i);
-				b++;
-			}
-			b = 0;
-		}
+		if (s1u[i] != s2u[i])
+			return (s1u[i] - s2u[i]);
 		i++;
 	}
 	return (0);

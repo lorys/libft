@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 10:45:59 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/11 12:17:23 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/11 12:54:12 by llopez            #+#    #+#             */
+/*   Updated: 2017/11/11 14:55:15 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char const *str, char const *search)
+char	*ft_strdup(const char *s1)
 {
-	int i;
-	int b;
+	char	*alloc;
+	int		i;
 
-	b = 0;
-	i = 0;
-	if (!*search)
-		return ((char *)str);
-	while (str[i] != '\0')
-	{
-		if (str[i] == search[b])
-		{
-			while (search[b] == str[i + b])
-			{
-				if (search[b + 1] == '\0')
-					return ((char *)str + i);
-				b++;
-			}
-			b = 0;
-		}
-		i++;
-	}
-	return (0);
+	i = -1;
+	if (!(alloc = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1)))
+		return (NULL);
+	while (s1[++i])
+		alloc[i] = s1[i];
+	alloc[i] = 0;
+	return (alloc);
 }
