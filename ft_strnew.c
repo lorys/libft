@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -13,18 +12,12 @@
 
 #include "libft.h"
 
-=======
->>>>>>> bdd0c2d7ef12ba81df0815af8dabc227c5e08368
 char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-<<<<<<< HEAD
 	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
-=======
-	str = (char *)malloc(sizeof(char) * size + 1);
->>>>>>> bdd0c2d7ef12ba81df0815af8dabc227c5e08368
 	size++;
 	while (size--)
 		str[size] = '\0';

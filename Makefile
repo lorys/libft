@@ -45,16 +45,12 @@ SOURCES = ft_atoi.c \
 		  ft_memalloc.c \
 		  ft_memdel.c \
 		  ft_strnew.c \
-<<<<<<< HEAD
 		  ft_strclr.c \
 		  ft_strdel.c \
 		  ft_striter.c \
 		  ft_striteri.c \
 		  ft_strmap.c \
 		  ft_strmapi.c
-=======
-		  ft_strclr.c
->>>>>>> bdd0c2d7ef12ba81df0815af8dabc227c5e08368
 
 
 OBJ = $(SOURCES:%.c=$(OBJDIR)%.o)

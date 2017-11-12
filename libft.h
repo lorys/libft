@@ -49,13 +49,10 @@ void	*ft_memalloc(size_t len);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strclr(char *str);
-<<<<<<< HEAD
 void	ft_strdel(char **as);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-=======
->>>>>>> bdd0c2d7ef12ba81df0815af8dabc227c5e08368
 
 #endif
