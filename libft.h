@@ -6,7 +6,7 @@
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:35:04 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/11 19:02:16 by llopez           ###   ########.fr       */
+/*   Updated: 2017/11/12 20:01:49 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,13 @@ void	*ft_memalloc(size_t len);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strclr(char *str);
+<<<<<<< HEAD
+void	ft_strdel(char **as);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+=======
+>>>>>>> bdd0c2d7ef12ba81df0815af8dabc227c5e08368
 
 #endif

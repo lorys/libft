@@ -1,25 +1,22 @@
-<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/12 18:12:02 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/12 18:12:12 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/12 19:04:31 by llopez            #+#    #+#             */
+/*   Updated: 2017/11/12 19:09:46 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-=======
->>>>>>> bdd0c2d7ef12ba81df0815af8dabc227c5e08368
-void	ft_strdel(char **as)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if (as != NULL)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	int s_len;
+
+	s_len = ft_strlen(s);
+	while (s_len--)
+		f((unsigned int)s_len, s + s_len);
 }
