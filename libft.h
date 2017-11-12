@@ -47,5 +47,7 @@ char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strncpy(char *dst, const char *src, size_t len);
 void	*ft_memalloc(size_t len);
 void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strclr(char *str);
 
 #endif
