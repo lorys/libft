@@ -6,17 +6,19 @@
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 15:27:16 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/09 10:46:46 by llopez           ###   ########.fr       */
+/*   Updated: 2017/11/17 13:43:26 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr(char const *str)
 {
 	int i;
 
 	i = 0;
+	if (!str)
+		return ;
 	while (str[i])
 		ft_putchar(str[i++]);
 }

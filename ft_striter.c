@@ -6,7 +6,7 @@
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:11:40 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/12 19:02:12 by llopez           ###   ########.fr       */
+/*   Updated: 2017/11/16 12:31:05 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striter(char *s, void (*f)(char *))
 {
 	int s_len;
 
+	if (!s || !f)
+		return ;
 	s_len = ft_strlen(s);
 	while (s_len--)
 		f(s + s_len);

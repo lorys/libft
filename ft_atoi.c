@@ -6,14 +6,11 @@
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:33:18 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/09 18:10:10 by llopez           ###   ########.fr       */
+/*   Updated: 2017/11/16 20:07:40 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 static size_t	ft_numblen(const char *str)
 {
@@ -42,15 +39,14 @@ int				ft_atoi(char const *str)
 		i++;
 	positive = (str[i] == '-') ? -1 : 1;
 	positive = (str[i] == '+') ? 1 : positive;
-	i = (str[i] == '-' || str[i] == '+') ? (i + 1) : i;
-	while (ft_isdigit(str[i]))
+	i = (str[i] == '-' || str[i] == '+') ? i : i - 1;
+	while (ft_isdigit(str[++i]))
 	{
 		zero = 0;
 		tmp = ((int)str[i] - '0') * positive;
 		while (zero++ < ((int)ft_numblen((char const *)str) - i - 1))
 			tmp *= 10;
 		result += tmp;
-		i++;
 	}
 	return (result);
 }

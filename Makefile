@@ -6,7 +6,7 @@
 #    By: llopez <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/12 18:15:23 by llopez            #+#    #+#              #
-#    Updated: 2017/11/12 20:02:08 by llopez           ###   ########.fr        #
+#    Updated: 2017/11/18 17:26:23 by llopez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,28 @@ SOURCES = ft_atoi.c \
 		  ft_striter.c \
 		  ft_striteri.c \
 		  ft_strmap.c \
-		  ft_strmapi.c
-
+		  ft_strmapi.c \
+		  ft_strequ.c \
+		  ft_strnequ.c \
+		  ft_strsub.c \
+		  ft_strjoin.c \
+		  ft_strtrim.c \
+		  ft_putendl.c \
+		  ft_itoa.c \
+		  ft_intlen.c \
+		  ft_putnbr.c \
+		  ft_putchar_fd.c \
+		  ft_putstr_fd.c \
+		  ft_putendl_fd.c \
+		  ft_putnbr_fd.c \
+		  ft_swap.c \
+		  ft_strsplit.c \
+		  ft_lstnew.c \
+		  ft_lstdelone.c \
+		  ft_lstdel.c \
+		  ft_lstadd.c \
+		  ft_lstiter.c \
+		  ft_lstmap.c \
 
 OBJ = $(SOURCES:%.c=$(OBJDIR)%.o)
 
@@ -62,11 +82,11 @@ OBJDIR = obj/
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 $(OBJDIR)%.o: %.c libft.h
-	@mkdir -p $(OBJDIR)
+	@mkdir -p $(OBJDIR) 
 	@gcc -o $@ $(FLAG) -c $<
 
 clean:
@@ -76,4 +96,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-

@@ -6,7 +6,7 @@
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 18:11:19 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/12 18:11:28 by llopez           ###   ########.fr       */
+/*   Updated: 2017/11/14 04:18:31 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_strclr(char *str)
 {
 	int str_len;
 
+	if (!str)
+		return ;
 	str_len = ft_strlen(str) + 1;
 	while (str_len--)
 		str[str_len] = '\0';
