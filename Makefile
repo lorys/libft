@@ -6,7 +6,7 @@
 #    By: llopez <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/12 18:15:23 by llopez            #+#    #+#              #
-#    Updated: 2017/12/04 16:16:07 by llopez           ###   ########.fr        #
+#    Updated: 2018/05/09 13:13:11 by llopez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,44 @@ SOURCES = ft_atoi.c \
 		  ft_lstiter.c \
 		  ft_lstmap.c \
 		  ft_realloc.c \
-		  ft_sqrt.c
+		  ft_sqrt.c \
+		  ft_printf.c \
+		  bigs.c \
+		  ft_putlnbr.c \
+		  get_precision.c \
+		  get_width.c \
+		  handle_c.c \
+		  handle_d.c \
+		  handle_flags.c \
+		  get_cast.c \
+		  handle_p.c \
+		  handle_percent.c \
+		  handle_s.c \
+		  handle_uu.c \
+		  init_struct.c \
+		  itoa_base.c \
+		  putnbr_base.c \
+		  width_str.c \
+		  ft_xx_calc_length.c \
+		  ft_preci_xx.c \
+		  ft_printf_xx.c \
+		  ft_preci_oo.c \
+		  ft_width_oo.c \
+		  ft_printf_oo.c \
+		  ft_calc_fg_d.c \
+		  ft_p_details_x.c \
+		  ft_printf_precision.c \
+		  ft_printf_flags_detect.c \
+		  ft_printf_putspace_d.c \
+		  ft_printf_width.c \
+		  ft_printf_putlstr.c \
+		  ft_printf_getnb.c \
+		  ft_printf_width_wchar.c \
+		  ft_fill_null.c \
+		  ft_wlen.c \
+		  ft_putwstr.c \
+		  ft_wchar_one_o.c \
+		  ft_putwchar.c
 
 OBJ = $(SOURCES:%.c=$(OBJDIR)%.o)
 
