@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 21:52:07 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/20 22:11:54 by llopez           ###   ########.fr       */
+/*   Created: 2017/11/11 12:54:12 by llopez            #+#    #+#             */
+/*   Updated: 2017/12/13 14:43:44 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_realloc(char *src, size_t new_size)
+char				*ft_strndup(const char *s1, int n)
 {
-	char	*tmp;
+	char	*alloc;
+	int		i;
 
-	tmp = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	ft_strcpy(tmp, src);
-	src = (char *)malloc(sizeof(char) * new_size);
-	src[new_size - 1] = '\0';
-	ft_strcpy(src, tmp);
-	return (src);
+	i = 0;
+	while (s1[i] && i < n)
+		i++;
+	if (!(alloc = (char *)malloc(sizeof(char) * i + 1)))
+		return (NULL);
+	i = 0;
+	while (s1[i] && i < n)
+	{
+		alloc[i] = s1[i];
+		i++;
+	}
+	alloc[i] = '\0';
+	return (alloc);
 }

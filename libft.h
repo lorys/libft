@@ -6,7 +6,7 @@
 /*   By: llopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:35:04 by llopez            #+#    #+#             */
-/*   Updated: 2017/11/18 17:34:13 by llopez           ###   ########.fr       */
+/*   Updated: 2017/12/04 17:03:53 by llopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strcat(char *s1, const char *s2);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s1, int n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strcpy(char *dst, const char *src);
@@ -84,5 +85,6 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_realloc(char *src, size_t new_size);
+int					ft_sqrt(int nb);
 
 #endif
